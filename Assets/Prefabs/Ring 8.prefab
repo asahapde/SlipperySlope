@@ -114,7 +114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0f903ece76954fc4b9f6c014c6c25ace, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.002
+      value: 0.004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0f903ece76954fc4b9f6c014c6c25ace, type: 3}
       propertyPath: m_LocalPosition.x
@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0f903ece76954fc4b9f6c014c6c25ace, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0f903ece76954fc4b9f6c014c6c25ace, type: 3}
       propertyPath: m_LocalRotation.x
@@ -138,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0f903ece76954fc4b9f6c014c6c25ace, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0f903ece76954fc4b9f6c014c6c25ace, type: 3}
       propertyPath: m_LocalRotation.z
@@ -150,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0f903ece76954fc4b9f6c014c6c25ace, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0f903ece76954fc4b9f6c014c6c25ace, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -164,6 +164,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 0f903ece76954fc4b9f6c014c6c25ace, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7771dae870357b64c9d4c024f202c1f4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f903ece76954fc4b9f6c014c6c25ace, type: 3}
 --- !u!1 &8811233276604641938 stripped
@@ -184,3 +188,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.189196, y: 1.2785459, z: 2.5288072}
   m_Center: {x: 0.4997459, y: -0.017035868, z: 0.04855466}
+--- !u!95 &1246462233121634392
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811233276604641938}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 0f903ece76954fc4b9f6c014c6c25ace, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7771dae870357b64c9d4c024f202c1f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
