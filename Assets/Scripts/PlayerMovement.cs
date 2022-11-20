@@ -18,10 +18,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        rb.AddForce(Vector3.ClampMagnitude(Vector3.left * horizontalInput, 0.5f) );
+        rb.AddForce(Vector3.left * horizontalInput*10);
     }
 
     void OnTriggerEnter(Collider other)

@@ -9,7 +9,7 @@ public class MusicControlScript : MonoBehaviour
     public AudioSource LevelMusic;
     private void Awake() // Runs before void Start()
     {
-        
+        SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
         DontDestroyOnLoad(this.gameObject); // Don't destroy this gameObject when loading different scenes
 
         if (instance == null) // If the MusicControlScript instance variable is null
@@ -29,6 +29,20 @@ public class MusicControlScript : MonoBehaviour
             GameMusic();
         }
     }
+
+    private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            MenuMusic();
+        }
+        else if (SceneManager.GetActiveScene().name == "MainScene")
+        {
+            GameMusic();
+        }
+
+    }
+
     public void MenuMusic()
     {
         menuMusic.Play();
@@ -37,7 +51,7 @@ public class MusicControlScript : MonoBehaviour
 
     public void GameMusic()
     {
-        menuMusic.Play();
-        LevelMusic.Stop();
+        LevelMusic.Play();
+        menuMusic.Stop();
     }
 }
