@@ -1000,6 +1000,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level_select: 0
   play_index: 3
+  settings_index: 2
+  pause_index: 4
+  volumeslider: {fileID: 0}
 --- !u!114 &1237322800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,7 +1726,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1237322799}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: select_easy
+        m_MethodName: select_medium
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

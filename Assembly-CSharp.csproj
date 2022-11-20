@@ -57,14 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\RandomTerrainGenerator1.cs" />
+    <Compile Include="Assets\Scripts\MusicControlScript.cs" />
+    <Compile Include="Assets\Scripts\RandomTerrainGenerator2.cs" />
     <Compile Include="Assets\Scripts\SettingsMenu.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\RandomTerrainGenerator.cs" />
-    <Compile Include="Assets\Scripts\MusicControlScript.cs" />
-    <Compile Include="Assets\Scripts\RandomTerrainGenerator.cs" />
-    <Compile Include="Assets\Scripts\RandomTerrainGenerator1.cs" />
-    <Compile Include="Assets\Scripts\RandomTerrainGenerator2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

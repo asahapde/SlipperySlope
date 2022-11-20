@@ -46,12 +46,12 @@ public class MainMenu : MonoBehaviour
     public void select_medium()
     {
         level_select = 2;
-        SceneManager.LoadScene(play_index);
+        SceneManager.LoadScene("MainScene1");
     }
     public void select_hard()
     {
         level_select = 3;
-        SceneManager.LoadScene(play_index);
+        SceneManager.LoadScene("MainScene2");
     }
 
    public void select_settings()
