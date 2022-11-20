@@ -54,7 +54,14 @@ public class RandomTerrainGenerator : MonoBehaviour
         GameObject currentRing = cloneRing;
         currentRing.GetComponent<MeshRenderer>().material = materials[Random.Range(0, materials.Count)];
 
+
+        GameObject cloneOb = Instantiate(obstacles[Random.Range(0, obstacles.Count)]);
+        GameObject currentOb = cloneOb;
+
+
+
         rings.Add(currentRing);
         Instantiate(currentRing, new Vector3(x, y, z), Quaternion.identity);
+        Instantiate(currentOb, new Vector3(0, y - 1f, z), Quaternion.identity);
     }
 }
