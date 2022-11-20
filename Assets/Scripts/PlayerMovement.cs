@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        rb.AddForce(Vector3.ClampMagnitude(Vector3.left * horizontalInput, 0.2f) );
+        Debug.Log(horizontalInput);
+        rb.AddForce(Vector3.ClampMagnitude(Vector3.left * horizontalInput, 0.5f) );
     }
 }
