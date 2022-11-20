@@ -17,6 +17,6 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         Debug.Log(horizontalInput);
-        rb.AddForce(Vector3.ClampMagnitude(Vector3.left * horizontalInput, 0.2f) );
+        rb.AddForce(Vector3.ClampMagnitude(Vector3.left * horizontalInput, 0.5f) );
     }
 }
