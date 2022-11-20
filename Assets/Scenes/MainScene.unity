@@ -167,20 +167,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb2bd144c1ffd14f822da3bf7173701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ringPrefab: {fileID: 69618851222100920, guid: 47fb11eb631bf7b4e89c05c098851f1e, type: 3}
+  ringPrefab:
+  - {fileID: 69618851222100920, guid: 47fb11eb631bf7b4e89c05c098851f1e, type: 3}
+  - {fileID: 69618851222100920, guid: 943807bb98405bb4388ea24cf88cceee, type: 3}
+  - {fileID: 69618851222100920, guid: 3bce4e72ca566ea448ffad191b0bf449, type: 3}
+  - {fileID: 69618851222100920, guid: b89e14f202ff9e04fb7ea372f6524313, type: 3}
+  - {fileID: 69618851222100920, guid: 52907376741867c41be63b52194ee19b, type: 3}
+  - {fileID: 69618851222100920, guid: 1e9db3143d5d5184ea704fcd385d99d9, type: 3}
+  - {fileID: 69618851222100920, guid: 8a9b3ad0425451b48aab92688e1ace8a, type: 3}
+  - {fileID: 69618851222100920, guid: 7476138186fd06949a96b800ce0b5a95, type: 3}
+  - {fileID: 69618851222100920, guid: cff7670a258693d40886c6494ecc72d3, type: 3}
   materials:
   - {fileID: 2100000, guid: e30eeb5e81fec814ebabd8b38a789ae4, type: 2}
   - {fileID: 2100000, guid: ff713c3fc2cbd7649b8b171d3a27ea47, type: 2}
   - {fileID: 2100000, guid: ba023d736518af84a9bb74ce93a65975, type: 2}
   - {fileID: 2100000, guid: 1ff73317ffa6d994f9b443e27cee34bd, type: 2}
   - {fileID: 2100000, guid: 8ae1760a9555e7449bd72063a1b37d01, type: 2}
-  obstacles:
-  - {fileID: 919132149155446097, guid: 31d545a563c567340a4ab0fe40d9f9af, type: 3}
-  - {fileID: 919132149155446097, guid: 19d16c1ec1ff76c4a91a1b2e19c2c469, type: 3}
-  - {fileID: 919132149155446097, guid: 59140acd951f93f4282a7660a20f3b50, type: 3}
-  - {fileID: 919132149155446097, guid: 34068d9a5be425c4cb00834976f621bc, type: 3}
-  - {fileID: 919132149155446097, guid: ba0bf19c2dcd26e49a6960f931417e8d, type: 3}
-  - {fileID: 919132149155446097, guid: 25cbc226f669bd94f8607b5a952593ba, type: 3}
   rings: []
 --- !u!1 &84651567
 GameObject:
@@ -2401,6 +2403,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   horizontalInput: 0
+  points: 0
+  pointText: {fileID: 1354073012}
 --- !u!54 &1960412758
 Rigidbody:
   m_ObjectHideFlags: 0
