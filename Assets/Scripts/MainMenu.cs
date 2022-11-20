@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class MainMenu : MonoBehaviour
 {
-    public int level_select=0;
+    public int level_select=0; //easy, medium, hard => 1,2,3
     public int play_index = 3;
+    public int settings_index = 2;
+    public int pause_index = 4;
+    public Slider volumeslider;
     public void play_game()
     {
         //main menu scene index
@@ -21,6 +26,11 @@ public class MainMenu : MonoBehaviour
 
         //loads previous scene
         SceneManager.LoadScene(current_index - 1);
+    }
+    public void go_main()
+    {
+        SceneManager.LoadScene(0);
+       
     }
     public void quit_game()
     {
@@ -44,5 +54,13 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(play_index);
     }
 
+   public void select_settings()
+    {
+        SceneManager.LoadScene(settings_index);
+    }
 
+    public void PAUSE()
+    {
+        SceneManager.LoadScene(pause_index);
+    }
 }
