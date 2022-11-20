@@ -4,21 +4,57 @@ using UnityEngine;
 
 public class RandomTerrainGenerator : MonoBehaviour
 {
+    public GameObject ringPrefab;
+    public List<Material> materials = new List<Material>();
+    public List<GameObject> obstacles = new List<GameObject>();
     public List<GameObject> rings;
+
+
+    private float currTime = 0.0f;
+    private float currY = -1.2f;
+    private float currZ = -3;
 
     void Start()
     {
-
+        //SpawnRing(2,2,2);
     }
 
     void Update()
     {
-        
+        currTime += Time.deltaTime;
+
+        //if(rings.Count < 10)
+        //{
+        //    SpawnRing(0, currY, currZ);
+        //    currY = currY - 0.4f;
+        //    currZ = currZ - 1f;
+        //}
+
+        if(currTime > 2) 
+        {
+            
+            //Destroy(rings[0]);
+            //rings.RemoveAt(0);
+
+            for(int i = 0; i < 10; i++)
+            {
+                SpawnRing(0, currY, currZ);
+                currY = currY - 0.4f;
+                currZ = currZ - 1f;
+            }
+            
+            currTime = 0;
+        }
+
     }
 
     void SpawnRing(float x, float y, float z)
     {
-        GameObject currentRing = rings[Random.Range(0, rings.Count)];
+        GameObject cloneRing = Instantiate(ringPrefab);
+        GameObject currentRing = cloneRing;
+        currentRing.GetComponent<MeshRenderer>().material = materials[Random.Range(0, materials.Count)];
+
+        rings.Add(currentRing);
         Instantiate(currentRing, new Vector3(x, y, z), Quaternion.identity);
     }
 }
