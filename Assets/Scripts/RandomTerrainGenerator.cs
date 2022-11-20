@@ -4,41 +4,34 @@ using UnityEngine;
 
 public class RandomTerrainGenerator : MonoBehaviour
 {
-    public GameObject ringPrefab;
+    public List<GameObject> ringPrefab = new List<GameObject>();
     public List<Material> materials = new List<Material>();
-    public List<GameObject> obstacles = new List<GameObject>();
     public List<GameObject> rings;
 
 
-    private float currTime = 0.0f;
+    private float currTime = 1.0f;
     private float currY = -1.2f;
     private float currZ = -3;
 
-    void Start()
-    {
-        //SpawnRing(2,2,2);
-    }
 
     void Update()
     {
         currTime += Time.deltaTime;
 
-        //if(rings.Count < 10)
-        //{
-        //    SpawnRing(0, currY, currZ);
-        //    currY = currY - 0.4f;
-        //    currZ = currZ - 1f;
-        //}
-
         if(currTime > 2) 
         {
-            
-            //Destroy(rings[0]);
-            //rings.RemoveAt(0);
-
             for(int i = 0; i < 10; i++)
             {
-                SpawnRing(0, currY, currZ);
+                if (i > 3 && i < 8)
+                {
+                    SpawnRing(0, currY, currZ, 999);
+                } else
+                {
+                    SpawnRing(0, currY, currZ, 0);
+                }
+
+
+                
                 currY = currY - 0.4f;
                 currZ = currZ - 1f;
             }
@@ -48,20 +41,22 @@ public class RandomTerrainGenerator : MonoBehaviour
 
     }
 
-    void SpawnRing(float x, float y, float z)
+    void SpawnRing(float x, float y, float z, int ringNumber)
     {
-        GameObject cloneRing = Instantiate(ringPrefab);
+        GameObject cloneRing;
+        if (ringNumber == 999)
+        {
+            cloneRing = Instantiate(ringPrefab[Random.Range(0, ringPrefab.Count)]);
+        } else
+        {
+            cloneRing = Instantiate(ringPrefab[ringNumber]);
+        }
+        
         GameObject currentRing = cloneRing;
         currentRing.GetComponent<MeshRenderer>().material = materials[Random.Range(0, materials.Count)];
 
 
-        GameObject cloneOb = Instantiate(obstacles[Random.Range(0, obstacles.Count)]);
-        GameObject currentOb = cloneOb;
-
-
-
         rings.Add(currentRing);
-        Instantiate(currentRing, new Vector3(x, y, z), Quaternion.identity);
-        Instantiate(currentOb, new Vector3(0, y - 1f, z), Quaternion.identity);
+        Instantiate(currentRing, new Vector3(x, y, z), Quaternion.Euler(new Vector3(0, 0, Random.Range(-50,50))));
     }
 }
