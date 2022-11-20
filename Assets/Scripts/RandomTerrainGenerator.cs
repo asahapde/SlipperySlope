@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class RandomTerrainGenerator : MonoBehaviour
 {
-    public GameObject ringPrefab;
+    public List<GameObject> ringPrefab;
     public List<Material> materials = new List<Material>();
-    public List<GameObject> obstacles = new List<GameObject>();
     public List<GameObject> rings;
 
 
@@ -50,11 +49,12 @@ public class RandomTerrainGenerator : MonoBehaviour
 
     void SpawnRing(float x, float y, float z)
     {
-        GameObject cloneRing = Instantiate(ringPrefab);
+        GameObject cloneRing = Instantiate(ringPrefab[Random.Range(0, ringPrefab.Count)]);
         GameObject currentRing = cloneRing;
         currentRing.GetComponent<MeshRenderer>().material = materials[Random.Range(0, materials.Count)];
 
+
         rings.Add(currentRing);
-        Instantiate(currentRing, new Vector3(x, y, z), Quaternion.identity);
+        Instantiate(currentRing, new Vector3(x, y, z), Quaternion.Euler(0, 0, Random.Range(-50, 50)));
     }
 }
